@@ -1,0 +1,21 @@
+{
+  "app-landing": {
+    "header": {
+      "nav": {
+        "flights": "رحلات الطيران",
+        "hotels": "الفنادق",
+        "insurance": "التأمين",
+        "flightHotel": "رحلة + فندق",
+        "carServices": "خدمات السيارات",
+        "carRental": "تأجير السيارات",
+        "airportTransfers": "النقل من وإلى المطار",
+        "holidayPackages": "باقات العطلات",
+        "activities": "الأنشطة"
+      },
+      "userNav": {
+        "signIn": "تسجيل الدخول",
+        "signUp": "إنشاء حساب"
+      }
+    }
+  }
+}

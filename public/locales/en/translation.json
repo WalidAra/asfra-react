@@ -1,0 +1,72 @@
+{
+  "app-landing": {
+    "header": {
+      "nav": {
+        "flights": "Flights",
+        "hotels": "Hotels",
+        "insurance": "Insurance",
+        "flightHotel": "Flight + Hotel",
+        "carServices": "Car Services",
+        "carRental": "Car Rental",
+        "airportTransfers": "Airport Transfers",
+        "holidayPackages": "Holiday Packages",
+        "activities": "Activities"
+      },
+      "userNav": {
+        "signIn": "Sign In",
+        "signUp": "Sign Up"
+      }
+    },
+    "hero": {
+      "mainTitle": "Discover Your Next Dream Destination",
+      "subTitle": "Discover amazing places at exclusive deals",
+      "tabs": {
+        "flight": {
+          "title": "Flights",
+          "content": {
+            "checkboxes": {
+              "oneWay": "One Way",
+              "roundTrip": "Round Trip",
+              "multiCity": "Multi-City",
+              "nonStop": "Non-Stop"
+            },
+            "inputs": {
+              "from": {
+                "label": "Flying From",
+                "placeholder": "Enter departure city"
+              },
+              "to": {
+                "label": "Flying To",
+                "placeholder": "Enter destination city"
+              }
+            }
+          }
+        },
+        "hotel": {
+          "title": "Hotels",
+          "content": {}
+        },
+        "insurance": {
+          "title": "Insurance",
+          "content": {}
+        },
+        "car": {
+          "title": "Cars",
+          "content": {}
+        },
+        "holiday": {
+          "title": "Holidays",
+          "content": {}
+        },
+        "activity": {
+          "title": "Activities",
+          "content": {}
+        },
+        "flight_hotel": {
+          "title": "Flight + Hotel",
+          "content": {}
+        }
+      }
+    }
+  }
+}

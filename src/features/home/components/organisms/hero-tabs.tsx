@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next"; // Import i18n hook
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import FlightTab from "./tabs/flight-tab";
@@ -12,37 +13,37 @@ const menuItems = [
   {
     icon: <Plane className="h-5 w-5" />,
     content: <FlightTab />,
-    label: "Flights",
+    labelKey: "app-landing.hero.tabs.flight.title", // Use translation key
     value: "flight",
   },
   {
     icon: <Building2 className="h-5 w-5" />,
     content: <HotelTab />,
-    label: "Hotels",
+    labelKey: "app-landing.hero.tabs.hotel.title", // Use translation key
     value: "hotel",
   },
   {
     icon: <Shield className="h-5 w-5" />,
     content: <InsuranceTab />,
-    label: "Insurance",
+    labelKey: "app-landing.hero.tabs.insurance.title", // Use translation key
     value: "insurance",
   },
   {
     icon: <Car className="h-5 w-5" />,
     content: <></>,
-    label: "Cars",
+    labelKey: "app-landing.hero.tabs.car.title", // Use translation key
     value: "car",
   },
   {
     icon: <Palmtree className="h-5 w-5" />,
     content: <HolydayTab />,
-    label: "Holidays",
+    labelKey: "app-landing.hero.tabs.holiday.title", // Use translation key
     value: "holiday",
   },
   {
     icon: <MapPin className="h-5 w-5" />,
     content: <ActivityTab />,
-    label: "Activities",
+    labelKey: "app-landing.hero.tabs.activity.title", // Use translation key
     value: "activity",
   },
   {
@@ -53,12 +54,14 @@ const menuItems = [
       </div>
     ),
     content: <FlightHotelTab />,
-    label: "Flight + Hotel",
+    labelKey: "app-landing.hero.tabs.flight_hotel.title", // Use translation key
     value: "flight_hotel",
   },
 ];
 
 export default function HeroTabs() {
+  const { t } = useTranslation();
+
   return (
     <Card className="md:w-[90%] w-[98%] shadow-3xl shadow-shadow-500 relative">
       <Tabs defaultValue="flight">
@@ -72,7 +75,9 @@ export default function HeroTabs() {
                   value={item.value}
                 >
                   {item.icon}
-                  <span className="hidden md:inline-block">{item.label}</span>
+                  <span className="hidden md:inline-block">
+                    {t(item.labelKey)}
+                  </span>
                 </TabsTrigger>
               ))}
             </TabsList>

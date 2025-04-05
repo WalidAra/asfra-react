@@ -1,0 +1,21 @@
+{
+  "app-landing": {
+    "header": {
+      "nav": {
+        "flights": "Vols",
+        "hotels": "Hôtels",
+        "insurance": "Assurance",
+        "flightHotel": "Vol + Hôtel",
+        "carServices": "Services de Voiture",
+        "carRental": "Location de Voiture",
+        "airportTransfers": "Transferts Aéroport",
+        "holidayPackages": "Forfaits Vacances",
+        "activities": "Activités"
+      },
+      "userNav": {
+        "signIn": "Se Connecter",
+        "signUp": "S'inscrire"
+      }
+    }
+  }
+}

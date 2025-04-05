@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { TanStackQueryProvider, ThemeProvider } from "./providers";
 import App from "./app/app";
+import "@/utils/i18n";
 import "@/styles/globals.css";
 
 createRoot(document.getElementById("root")!).render(

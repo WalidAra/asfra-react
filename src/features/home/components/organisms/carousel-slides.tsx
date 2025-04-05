@@ -38,7 +38,7 @@ const CarouselSlides = ({ cities = [], label }: Props) => {
       >
         <Tabs defaultValue={defaultCities[0].value} className="w-full">
           <div className="flex justify-center w-full items-center">
-            <TabsList className="bg-primary/10 mb-4 p-1.5 rounded-xl flex-wrap flex items-center gap-4">
+            <TabsList className="bg-primary/10 mb-4 p-1.5 rounded-xl scale-90 sm:scale-100 flex items-center gap-4">
               {defaultCities.map((city) => (
                 <TabsTrigger
                   className="data-[state=active]:bg-primary/20 data-[state=active]:text-purple-800 data-[state=active]:backdrop-blur-lg rounded-lg hover:text-text-purple-500 transition-all text-purple-500 cursor-pointer"

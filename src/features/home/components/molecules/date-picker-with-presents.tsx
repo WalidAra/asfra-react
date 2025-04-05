@@ -1,6 +1,4 @@
-
-import * as React from "react";
-import { addDays, format } from "date-fns";
+import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -11,24 +9,23 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { DateRange } from "react-day-picker";
 
-export function DatePickerWithPresets() {
-  const [date, setDate] = React.useState<Date>();
-
+export function DatePickerWithPresets({
+  date,
+  setDate,
+}: {
+  date: DateRange | undefined;
+  setDate: (date: DateRange | undefined) => void;
+}) {
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button
+          id="date"
           variant={"outline"}
           className={cn(
-            " justify-start text-left w-full relative font-normal",
+            "w-full justify-start text-left text-xs text-muted-foreground font-normal relative",
             !date && "text-muted-foreground"
           )}
         >
@@ -36,27 +33,30 @@ export function DatePickerWithPresets() {
             Check in - out
           </label>
           <CalendarIcon />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
+          {date?.from ? (
+            date.to ? (
+              <>
+                {format(date.from, "LLL dd, y")} -{" "}
+                {format(date.to, "LLL dd, y")}
+              </>
+            ) : (
+              format(date.from, "LLL dd, y")
+            )
+          ) : (
+            <span>Pick a date</span>
+          )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
-        <Select
-          onValueChange={(value) =>
-            setDate(addDays(new Date(), parseInt(value)))
-          }
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Select" />
-          </SelectTrigger>
-          <SelectContent position="popper">
-            <SelectItem value="0">Today</SelectItem>
-            <SelectItem value="1">Tomorrow</SelectItem>
-            <SelectItem value="3">In 3 days</SelectItem>
-            <SelectItem value="7">In a week</SelectItem>
-          </SelectContent>
-        </Select>
+      <PopoverContent className="w-auto p-0" align="start">
         <div className="rounded-md border">
-          <Calendar mode="single" selected={date} onSelect={setDate} />
+          <Calendar
+            initialFocus
+            mode="range"
+            defaultMonth={date?.from}
+            selected={date}
+            onSelect={setDate}
+            numberOfMonths={2}
+          />
         </div>
       </PopoverContent>
     </Popover>
